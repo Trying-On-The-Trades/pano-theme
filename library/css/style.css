@@ -1,29 +1,10 @@
-/*! Made with Bones: http://themble.com/bones :) */
-/******************************************************************
-Site Name:
-Author:
+/**
 
-Stylesheet: Main Stylesheet
+    Bit Space Development Ltd.
 
-Here's where the magic happens. Here, you'll see we are calling in
-the separate media queries. The base mobile goes outside any query
-and is called at the beginning, after that we call the rest
-of the styles inside media queries.
+    Pano Play View Theme Styles
 
-Helpful articles on Sass file organization:
-http://thesassway.com/advanced/modular-css-naming-conventions
-
-******************************************************************/
-/*********************
-IMPORTING PARTIALS
-These files are needed at the beginning so that we establish all
-our mixins, functions, and variables that we'll be using across
-the whole project.
-*********************/
-/* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
-/* ==========================================================================
-   HTML5 display definitions
-   ========================================================================== */
+*/
 /**
  * Correct `block` display not defined in IE 8/9.
  */
