@@ -143,6 +143,10 @@ function bones_scripts_and_styles()
 
         wp_register_script('npm', get_stylesheet_directory_uri() . '/library/js/npm.js', array(), '2.5.3', true);
 
+        wp_register_script('featherlight', get_stylesheet_directory_uri() . '/library/js/featherlight.js', array(), '2.5.3', true);
+
+        wp_register_script('featherlight-gallery', get_stylesheet_directory_uri() . '/library/js/featherlight.gallery.js', array(), '2.5.3', true);
+
 
         // register main stylesheet
         wp_register_style('bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all');
@@ -155,6 +159,10 @@ function bones_scripts_and_styles()
         wp_register_style('bootstrap-theme-min', get_stylesheet_directory_uri() . '/library/css/bootstrap-theme.min.css', array(), '');
 
         wp_register_style('fontawesome-min', get_stylesheet_directory_uri() . '/library/css/font-awesome.min.css', array(), '');
+
+        wp_register_style('featherlight', get_stylesheet_directory_uri() . '/library/css/featherlight.css', array(), '');
+
+        wp_register_style('featherlight-gallery', get_stylesheet_directory_uri() . '/library/css/featherlight.gallery.css', array(), '');
 
         // comment reply script for threaded comments
         if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -171,6 +179,8 @@ function bones_scripts_and_styles()
         wp_enqueue_style('bootstrap-min');
         wp_enqueue_style('bootstrap-theme-min');
         wp_enqueue_style('fontawesome-min');
+        wp_enqueue_style('featherlight');
+        wp_enqueue_style('featherlight-gallery');
 
         $wp_styles->add_data('bones-ie-only', 'conditional', 'lt IE 9'); // add conditional wrapper around ie stylesheet
 
@@ -183,6 +193,8 @@ function bones_scripts_and_styles()
         wp_enqueue_script('bones-js');
         wp_enqueue_script('bootstrap');
         wp_enqueue_script('npm');
+        wp_enqueue_script('featherlight');
+        wp_enqueue_script('featherlight.gallery');
 
     }
 }
