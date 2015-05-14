@@ -25,7 +25,7 @@ $pano_script = load_pano($pano_id);
 
 ?>
 <div id="page">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
 
 
 <script>
@@ -46,7 +46,11 @@ $pano_script = load_pano($pano_id);
     document.addEventListener('DOMContentLoaded',function(){
        var height = (document.getElementById('page').offsetHeight - 20) + "px";
        var width = document.getElementById('page').offsetWidth + "px";
-       
+
+        $("#mission-menu").mmenu({
+            slidingSubmenus: false
+        });
+
        resize_pano(height, width);
     });
     
