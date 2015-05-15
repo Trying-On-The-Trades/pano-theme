@@ -30,6 +30,40 @@ $pano_script = load_pano($pano_id);
 
 <script>
     
+    function showMessage(){
+      alert("This is your new hotspot!");
+    }
+
+    function newHotspot(){
+      var hotspotName = prompt("Name of the new hotspot:");
+
+      addHotspot(hotspotName);
+
+    }
+
+    function addHotspot(hotspotName){
+      var mx = krpano.get("mouse.x");
+      var my = krpano.get("mouse.y");
+      var pt = krpano.screentosphere(mx,my);
+
+      var hotspotAddName = "addhotspot("  + hotspotName + ")";
+      var hotspotURL     = "set(hotspot[" + hotspotName + "].url,'http://localhost:8888/wordpress/wp-content/panos/1/info.png');";
+      var hotspotX       = "set(hotspot[" + hotspotName + "].ath," + pt.x + ");";
+      var hotspotY       = "set(hotspot[" + hotspotName + "].atv," + pt.y + ");"; 
+      var hotspotScale   = "set(hotspot[" + hotspotName + "].scale,0.5);";
+      var hotspotZoom    = "set(hotspot[" + hotspotName + "].zoom,'true');";
+      var hotspotOnClick = "set(hotspot[" + hotspotName + "].onclick, 'onClickevent');";
+
+      krpano.call(hotspotAddName);
+      krpano.call(hotspotURL);
+      krpano.call(hotspotX);
+      krpano.call(hotspotY);
+      krpano.call(hotspotScale);
+      krpano.call(hotspotZoom);
+      krpano.call(hotspotOnClick);
+
+    }
+
     
     // Handle resizing the pano no matter the browser size
     function resize_pano(height, width){
@@ -39,6 +73,10 @@ $pano_script = load_pano($pano_id);
         
         panoDiv.style.height = height;
         panoDiv.style.width = width;
+
+        var pano = document.getElementById("pano_wrapper");
+        pano.addEventListener("dblclick", newHotspot);
+
     }
     
     
