@@ -23,6 +23,8 @@ if (isset($_GET['pano_id'])){
 // Call the pano function
 $pano_script = load_pano($pano_id);
 
+$content_root = content_url();
+
 ?>
 <div id="page">
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
@@ -47,7 +49,7 @@ $pano_script = load_pano($pano_id);
       var pt = krpano.screentosphere(mx,my);
 
       var hotspotAddName = "addhotspot("  + hotspotName + ")";
-      var hotspotURL     = "set(hotspot[" + hotspotName + "].url,'http://localhost:8888/wordpress/wp-content/panos/1/info.png');";
+      var hotspotURL     = "set(hotspot[" + hotspotName + "].url,'<?=$content_root?>/panos/1/info.png');";
       var hotspotX       = "set(hotspot[" + hotspotName + "].ath," + pt.x + ");";
       var hotspotY       = "set(hotspot[" + hotspotName + "].atv," + pt.y + ");"; 
       var hotspotScale   = "set(hotspot[" + hotspotName + "].scale,0.5);";
